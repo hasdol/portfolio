@@ -31,7 +31,7 @@ export default function Contact() {
     >
       <div className="max-w-2xl text-center">
         <h2 className="text-4xl font-semibold text-gray-900 mb-6">Contact</h2>
-        <p className="text-lg text-gray-700 mb-4">
+        <div className="text-lg text-gray-700 mb-4">
           Get in touch for collaboration or inquiries. Feel free to email me at:
           <div className='flex flex-col mt-5 space-y-2'>
             <a
@@ -45,7 +45,7 @@ export default function Contact() {
             >+4747286648</a>
           </div>
 
-        </p>
+        </div>
       </div>
       <div className='flex space-x-5 mt-2'>
         <div className='cursor-pointer shadow p-2 rounded-xl bg-white hover:bg-gray-100' onClick={handleLinkedinClick}>
