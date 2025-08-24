@@ -29,14 +29,14 @@ export default function TechStack() {
       className="min-h-screen flex items-center justify-center bg-gray-50 py-16 px-4"
     >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold text-gray-900 mb-8">Tech Stack</h2>
+          <h2 className="text-3xl bg-gray-50 rounded-xl px-4 py-2 w-fit mx-auto text-gray-900 mb-10">Tech Stack</h2>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {techs.map((tech) => (
             <div 
               key={tech.name} 
               className="p-4 bg-white rounded-lg shadow flex flex-col items-center"
             >
-              <div className="mb-3 text-btn">{tech.icon}</div>
+              <div className="mb-3 text-gray-700">{tech.icon}</div>
               <h3 className="font-semibold text-gray-800">{tech.name}</h3>
             </div>
           ))}

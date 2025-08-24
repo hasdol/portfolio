@@ -30,7 +30,7 @@ export default function Contact() {
       className="min-h-screen flex flex-col items-center justify-center bg-gray-50 py-16 px-4"
     >
       <div className="max-w-2xl text-center">
-        <h2 className="text-4xl font-semibold text-gray-900 mb-6">Contact</h2>
+          <h2 className="text-3xl bg-gray-50 rounded-xl px-4 py-2 w-fit mx-auto text-gray-900 mb-10">About Me</h2>
         <div className="text-lg text-gray-700 mb-4">
           Get in touch for collaboration or inquiries. Feel free to email me at:
           <div className='flex flex-col mt-5 space-y-2'>

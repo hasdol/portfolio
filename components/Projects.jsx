@@ -32,12 +32,12 @@ export default function Projects() {
       className="min-h-screen flex items-center justify-center bg-white py-16 px-4"
     >
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-semibold text-gray-900 text-center mb-8">Projects</h2>
+          <h2 className="text-3xl bg-gray-50 rounded-xl px-4 py-2 w-fit mx-auto text-gray-900 mb-10">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Ski-Lab Project */}
           <div className="flex flex-col items-center" onClick={handleSkiLabClick}>
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               className="relative w-[200px] h-auto overflow-hidden rounded-xl shadow-xl"
             >
               <Image
@@ -45,7 +45,7 @@ export default function Projects() {
                 alt="Ski-Lab Mobile Interface"
                 layout="responsive"
                 objectFit="cover"
-                className="transition-transform duration-300 ease-in-out"
+                className="transition-transform duration-300 ease-in-out cursor-pointer"
               />
             </motion.div>
             <h3 className="mt-4 text-2xl font-semibold text-gray-800">Ski-Lab.com</h3>
@@ -56,7 +56,7 @@ export default function Projects() {
               href="https://ski-lab.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block px-4 py-2 bg-btn text-white font-semibold rounded hover:bg-indigo-500 transition-colors duration-300"
+              className="mt-4 inline-block px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors duration-300"
             >
               Visit Website
             </a>
@@ -64,7 +64,7 @@ export default function Projects() {
           {/* Eiendomsmegler1 Project */}
           <div className="flex flex-col items-center" onClick={handleBachelorClick}>
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               className="relative w-[200px] h-auto overflow-hidden rounded-xl shadow-xl"
             >
               <Image
@@ -72,7 +72,7 @@ export default function Projects() {
                 alt="Eiendomsmegler1 Project Interface"
                 layout="responsive"
                 objectFit="cover"
-                className="transition-transform duration-300 ease-in-out"
+                className="transition-transform duration-300 ease-in-out cursor-pointer"
               />
             </motion.div>
             <h3 className="mt-4 text-2xl font-semibold text-gray-800">Eiendomsmegler1</h3>
@@ -83,7 +83,7 @@ export default function Projects() {
               href="https://bachelor-eiendomsmegler1.firebaseapp.com/kjope-bolig"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block px-4 py-2 bg-btn text-white font-semibold rounded hover:bg-indigo-500 transition-colors duration-300"
+              className="mt-4 inline-block px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors duration-300"
             >
               Visit Website
             </a>

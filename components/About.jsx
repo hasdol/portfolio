@@ -23,19 +23,19 @@ export default function About() {
 
 
         <div className="max-w-2xl text-center md:col-span-2">
-          <h2 className="text-4xl font-semibold text-gray-900 mb-6">About Me</h2>
+          <h2 className="text-3xl bg-gray-50 rounded-xl px-4 py-2 w-fit mx-auto text-gray-900 mb-10">About Me</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            I will complete my Bachelor's degree in Summer 2025, but I have already acquired the majority of my skills through self-learning. With a background as a top athlete, I have learned the value of discipline, focused work, and teamwork. I am passionate about creating modern, user-friendly solutions that make a real difference.
+            I completed my Bachelor's degree in Summer 2025, and I have acquired the majority of my skills through self-learning. With a background as a top athlete, I have learned the value of discipline, focused work, and teamwork. I am passionate about creating modern, user-friendly solutions that make a real difference.
           </p>
 
         </div>
-        <div className='shadow-xl h-fit w-fit my-auto mx-auto'>
+        <div className='shadowh-fit w-fit my-auto mx-auto'>
           <Image
             src={CrossCountry}
             alt="Håkon Asdøl Cross Country skiing"
             width={300}
             height={300}
-            className="object-contain "
+            className="object-contain rounded"
           />
         </div>
 

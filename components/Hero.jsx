@@ -29,7 +29,7 @@ export default function Hero() {
             alt="Profile Picture of Håkon Asdøl"
             width={250}
             height={250}
-            className="rounded-full object-cover shadow-lg"
+            className="rounded-full object-cover shadow"
             priority
           />
         </div>
@@ -37,16 +37,9 @@ export default function Hero() {
         {/* Text Content */}
         <div className="text-center md:text-left md:w-1/2">
           <h4 className="text-lg text-gray-600 flex justify-center md:justify-start items-center mb-2">
-            <motion.span 
-              variants={handVariants} 
-              whileHover="hover" 
-              className="mr-2"
-            >
-              <PiHandWavingLight size={24} />
-            </motion.span>
             Hi, I'm
           </h4>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
+          <h1 className="text-5xl md:text-5xl bg-gray-100 w-fit rounded-xl px-4 py-2 text-gray-700">
             Håkon Asdøl
           </h1>
           <p className="mt-4 text-xl text-gray-700">
