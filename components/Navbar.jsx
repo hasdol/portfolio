@@ -9,24 +9,37 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const sectionIds = ['home', 'about', 'tech-stack', 'projects', 'contact'];
 
   useEffect(() => {
-    const ids = ['home', 'about', 'tech-stack', 'projects', 'contact'];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: '-20% 0px -80% 0px', threshold: 0.3 } // More top-focused
-    );
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      const offset = 80; // Adjust for navbar height if needed
+      let closestSection = sectionIds[0];
+      let minDistance = Infinity;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const distance = Math.abs(rect.top - offset);
+          if (rect.top - offset <= 0 && distance < minDistance) {
+            minDistance = distance;
+            closestSection = id;
+          }
+        }
+      }
+      setActiveSection(closestSection);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  console.log(activeSection);
+  
 
   return (
     <motion.nav
