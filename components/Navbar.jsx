@@ -19,7 +19,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { rootMargin: '-40% 0px -50% 0px', threshold: 0.1 }
+      { rootMargin: '-20% 0px -80% 0px', threshold: 0.3 } // More top-focused
     );
     ids.forEach((id) => {
       const el = document.getElementById(id);
@@ -77,21 +77,34 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden px-4 pb-4"
+            className="md:hidden"
           >
-            <div className="bg-white rounded-xl shadow overflow-y-auto max-h-[80vh]">
+            <div className="bg-white backdrop-blur-md overflow-y-auto max-h-[80vh]">
               <div className="flex flex-col space-y-2 p-4">
                 {navLinks.map(link => {
                   const id = link.toLowerCase().replace(' ', '-');
                   const isActive = activeSection === id;
+                  const handleMobileClick = (e) => {
+                    e.preventDefault();
+                    setIsOpen(false); // Close menu first
+                    setTimeout(() => {
+                      const el = document.getElementById(id);
+                      const navbar = document.querySelector('nav');
+                      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                      if (el) {
+                        const y = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
+                    }, 300); // Wait for menu close animation
+                  };
                   return (
                     <motion.a
                       key={link}
                       href={`#${id}`}
                       whileHover={{ scale: 1.03 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                      onClick={() => setIsOpen(false)}
-                      className={`text-lg font-semibold p-3 rounded cursor-pointer transition-colors
+                      onClick={handleMobileClick}
+                      className={`text-lg p-3 rounded cursor-pointer transition-colors
                         ${isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'}`}
                     >
                       {link}
